@@ -22,7 +22,9 @@ must be all different (no ID or Key can be shared between daemons).
 To install [`ipfs-key`], with Go installed, run:
 
 ```console
-$ go get github.com/whyrusleeping/ipfs-key
+$ go install github.com/Sunscreen-tech/ipfs-key
+# and if necessary, ensure it goes on the PATH
+$ export PATH="$HOME/go/bin:$PATH"
 ```
 
 then generate a key-pair:
@@ -53,13 +55,14 @@ For `ipfs_cluster_peer_addr` you need to specify a valid [multiaddr] by taking t
 ```
 and replacing:
 
-`hostname`: with the host from your invetory that this file is for, e.g
-`example.org` `ipfs_cluster_peer_id`: with the peer id for this cluster node,
+- `hostname`: with the host from your invetory that this file is for, e.g
+`example.org`
+- `ipfs_cluster_peer_id`: with the peer id for this cluster node,
 that you just created.
 
 
 You can also define `ipfs_cluster_peername` to name your cluster peer for
 conviniency. Otherwise, the hostname will be used.
 
-[`ipfs-key`]: https://github.com/whyrusleeping/ipfs-key
+[`ipfs-key`]: https://github.com/Sunscreen-tech/ipfs-key
 [multiaddr]: https://multiformats.io/multiaddr/
