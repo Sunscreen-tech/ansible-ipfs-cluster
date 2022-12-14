@@ -1,3 +1,9 @@
+- name: install dependencies
+  become: yes
+  ansible.builtin.package:
+    name: acl
+    state: present
+
 - name: create download folder for go-ipfs
   become: yes
   file:
@@ -115,7 +121,7 @@
     owner: ipfs
     group: ipfs
   notify: restart IPFS
-  
+
 - name: reload systemd
   become: yes
   systemd:

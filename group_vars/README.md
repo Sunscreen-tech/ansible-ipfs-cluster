@@ -7,4 +7,4 @@ Edit the `ipfs.yml` file in this folder and set the appropiate values for the
 variables.
 
 Note the cluster `service.json` template can be fully customized by defining
-the appropiate variables, and otherwise they will take sensisble defaults.
+the appropiate variables, and otherwise they will take sensible defaults.

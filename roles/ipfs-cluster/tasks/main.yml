@@ -1,3 +1,8 @@
+- name: install dependencies
+  ansible.builtin.package:
+    name: acl
+    state: present
+
 - name: create download folder for ipfs-cluster
   become: yes
   file:
@@ -41,7 +46,7 @@
       with_items:
         - ipfs-cluster-service
         - ipfs-cluster-ctl
-        
+
 - name: install ipfs-cluster init service
   become: yes
   template:
@@ -106,7 +111,7 @@
     owner: ipfs
     group: ipfs
   notify: restart IPFS Cluster
-  
+
 - name: copy peerstore
   become: yes
   template:
