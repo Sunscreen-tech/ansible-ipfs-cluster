@@ -62,7 +62,7 @@ that you just created.
 
 
 You can also define `ipfs_cluster_peername` to name your cluster peer for
-conviniency. Otherwise, the hostname will be used.
+conveniency. Otherwise, the hostname will be used.
 
 [`ipfs-key`]: https://github.com/Sunscreen-tech/ipfs-key
 [multiaddr]: https://multiformats.io/multiaddr/
