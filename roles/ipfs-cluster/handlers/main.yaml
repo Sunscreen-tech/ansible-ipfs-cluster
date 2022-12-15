@@ -9,6 +9,8 @@
 
 
 - name: restart IPFS Cluster
+  tags:
+    - restart
   become: yes
   service:
     name: ipfs-cluster

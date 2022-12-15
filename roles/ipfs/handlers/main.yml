@@ -4,12 +4,14 @@
     daemon_reload: yes
     name: ipfs
   notify: restart IPFS
-  when: 
+  when:
     - not (ansible_distribution == "Amazon" and ansible_distribution_major_version == "NA")
     - not (ansible_distribution == "Ubuntu" and ansible_distribution_version is version('15.04', '<'))
     - not (ansible_distribution == "Debian" and ansible_distribution_version is version('8', '<'))
 
 - name: restart IPFS
+  tags:
+    - restart
   become: yes
   service:
     name: ipfs
