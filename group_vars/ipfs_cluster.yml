@@ -4,3 +4,4 @@ ipfs_cluster_arch: amd64
 ipfs_cluster_version: v1.0.4
 ipfs_cluster_fd_max: 10000
 ipfs_cluster_consensus: crdt # raft
+ipfs_cluster_crdt_cluster_name: sunscreen-test

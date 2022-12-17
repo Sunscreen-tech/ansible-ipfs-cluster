@@ -1,9 +1,10 @@
 [ipfs]
 # insert here
-ec2-35-93-79-182.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
-ec2-35-85-231-187.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
-ec2-35-86-204-42.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
-ec2-34-223-40-21.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
+ec2-44-234-36-167.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
+ec2-34-222-188-32.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
+ec2-35-93-51-150.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
+ec2-35-88-5-37.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
+ec2-44-242-165-236.us-west-2.compute.amazonaws.com ansible_ssh_user=ubuntu
 
 [ipfs_cluster:children]
 ipfs

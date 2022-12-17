@@ -100,6 +100,7 @@
   with_items:
     - identity.json
     - service.json
+    - follower.json
   notify: restart IPFS Cluster
 
 - name: set version file (to notify restart on upgrades)
@@ -143,3 +144,37 @@
     name: ipfs-cluster
     state: started
     enabled: yes
+
+# copy follower config locally (this can be removed eventually, just a convenience)
+- name: generate follower config
+  tags: follower
+  run_once: true
+  connection: local
+  block:
+    - name: make output directory
+      file:
+        state: directory
+        dest: dist/follower
+    - name: create follower service.json
+      delegate_to: localhost
+      template:
+        src: follower.json
+        dest: dist/follower/service.json
+
+# generate follower config on cluster
+- name: pin follower config
+  tags: follower
+  run_once: true
+  block:
+    - name: add file to cluster
+      register: file_added
+      become: yes
+      become_user: ipfs
+      ansible.builtin.command: /usr/local/bin/ipfs-cluster-ctl add follower.json --name follower-config
+      args:
+        chdir: "{{ ipfs_home }}/.ipfs-cluster/"
+
+    - name: print follower init command
+      debug:
+        msg: "ipfs-cluster-follow {{ ipfs_cluster_crdt_cluster_name }} init http://127.0.0.1:8080/ipfs/{{ file_added.stdout.split(' ')[1] }}"
+
